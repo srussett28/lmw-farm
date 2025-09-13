@@ -1,4 +1,3 @@
 streamlit
 psycopg2-binary
 pandas
-https://sandowbirk.com/bali-project-indonesia
