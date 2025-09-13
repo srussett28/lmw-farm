@@ -3,6 +3,8 @@ import pandas as pd
 from datetime import datetime
 import base64
 import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
 # Page configuration
 st.set_page_config(
@@ -77,6 +79,54 @@ st.markdown("""
    }
 </style>
 """, unsafe_allow_html=True)
+
+# Database configuration
+def init_database_connection():
+    """Initialize database connection"""
+    try:
+        return psycopg2.connect(**st.secrets.postgres)
+    except Exception as e:
+        st.error("Database connection failed")
+        return None
+
+def save_interest_form(name, email, phone, location, interests, contact_preference, notes):
+    """Save interest form submission to database"""
+    conn = init_database_connection()
+    if not conn:
+        return False
+    
+    try:
+        with conn.cursor() as cur:
+            # Create table if it doesn't exist
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS launch_interest (
+                    id SERIAL PRIMARY KEY,
+                    submitted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    name VARCHAR(255) NOT NULL,
+                    email VARCHAR(255) NOT NULL,
+                    phone VARCHAR(50),
+                    location VARCHAR(255),
+                    interests TEXT,
+                    contact_preference VARCHAR(50),
+                    notes TEXT
+                )
+            """)
+            
+            # Insert the submission
+            cur.execute("""
+                INSERT INTO launch_interest 
+                (name, email, phone, location, interests, contact_preference, notes)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """, (name, email, phone, location, ', '.join(interests), contact_preference, notes))
+            
+            conn.commit()
+            return True
+    except Exception as e:
+        conn.rollback()
+        st.error(f"Error saving to database: {e}")
+        return False
+    finally:
+        conn.close()
 
 def main():
     # Hero section with logo and family photo
@@ -319,8 +369,6 @@ def main():
         - Refrigerated lockers
         - Farm store location
         """)
-    
-
     
     # Footer with contact info
     st.markdown('<hr style="border: 2px solid #ccc; margin: 40px 0;">', unsafe_allow_html=True)
