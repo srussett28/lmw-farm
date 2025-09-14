@@ -3,6 +3,8 @@ import pandas as pd
 from datetime import datetime
 import base64
 import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
 # Page configuration
 st.set_page_config(
@@ -77,6 +79,54 @@ st.markdown("""
    }
 </style>
 """, unsafe_allow_html=True)
+
+# Database configuration
+def init_database_connection():
+    """Initialize database connection"""
+    try:
+        return psycopg2.connect(**st.secrets.postgres)
+    except Exception as e:
+        st.error(f"Database connection failed: {str(e)}")
+        return None
+
+def save_interest_form(name, email, phone, location, interests, contact_preference, notes):
+    """Save interest form submission to database"""
+    conn = init_database_connection()
+    if not conn:
+        return False
+    
+    try:
+        with conn.cursor() as cur:
+            # Create table if it doesn't exist
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS launch_interest (
+                    id SERIAL PRIMARY KEY,
+                    submitted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    name VARCHAR(255) NOT NULL,
+                    email VARCHAR(255) NOT NULL,
+                    phone VARCHAR(50),
+                    location VARCHAR(255),
+                    interests TEXT,
+                    contact_preference VARCHAR(50),
+                    notes TEXT
+                )
+            """)
+            
+            # Insert the submission
+            cur.execute("""
+                INSERT INTO launch_interest 
+                (name, email, phone, location, interests, contact_preference, notes)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """, (name, email, phone, location, ', '.join(interests), contact_preference, notes))
+            
+            conn.commit()
+            return True
+    except Exception as e:
+        conn.rollback()
+        st.error(f"Error saving to database: {e}")
+        return False
+    finally:
+        conn.close()
 
 def main():
     # Hero section with logo and family photo
@@ -264,22 +314,25 @@ def main():
         
         if submitted:
             if name and email and interest:
-                # Show success message without database
-                st.success(f"""
-                ✅ **Welcome to the LMW Farm family, {name}!**
-                
-                Thank you for your interest in: {', '.join(interest)}
-                
-                **What happens next:**
-                - Please send us a quick email at **lmwfarm2025@gmail.com** with "Launch List" in the subject
-                - Include your name and interests so we can contact you first when we launch
-                - We'll add you to our launch list manually
-                - First access to fresh eggs and chicks in Spring 2025
-                - Special launch pricing for early supporters
-                
-                Thank you for supporting local agriculture! 🌱
-                """)
-                st.balloons()
+                # Save to database
+                if save_interest_form(name, email, phone, location, interest, contact_preference, special_notes):
+                    st.success(f"""
+                    ✅ **Welcome to the LMW Farm family, {name}!**
+                    
+                    You're now on our launch list and will be notified as soon as we have:
+                    {', '.join(interest)}
+                    
+                    **What happens next:**
+                    - We'll send launch updates to {email}
+                    - First access to fresh eggs and chicks
+                    - Special launch pricing for early supporters
+                    - Invitation to our farm opening event
+                    
+                    Thank you for supporting local agriculture! 🌱
+                    """)
+                    st.balloons()
+                else:
+                    st.error("Sorry, there was an issue saving your information. Please try again or contact us directly.")
             else:
                 st.error("Please fill in your name, email, and select at least one interest area.")
     
