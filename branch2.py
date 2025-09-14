@@ -86,7 +86,7 @@ def init_database_connection():
     try:
         return psycopg2.connect(**st.secrets.postgres)
     except Exception as e:
-        st.error("Database connection failed")
+        st.error(f"Database connection failed: {str(e)}")
         return None
 
 def save_interest_form(name, email, phone, location, interests, contact_preference, notes):
