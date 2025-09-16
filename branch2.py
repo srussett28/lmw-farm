@@ -161,7 +161,7 @@ def main():
     <div class="coming-soon-box">
         <h1 style="color: #e65100; margin: 0; font-size: 3em;">🚀 COMING SOON!</h1>
         <p style="font-size: 1.3em; color: #f57c00; margin: 15px 0; font-weight: bold;">
-            We're launching Spring 2025 with fresh farm eggs and baby chicks!
+            We're launching Spring 2026 with fresh farm eggs and baby chicks!
         </p>
         <p style="font-size: 1.1em; color: #333; margin: 10px 0;">
             Currently building our flock and preparing for launch. Sign up below to be notified when we go live!
