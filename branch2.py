@@ -259,7 +259,7 @@ def main():
     with col3:
         st.metric(
             label="📅 Target Launch",
-            value="Spring 2025",
+            value="Spring 2026",
             delta="3-6 months",
             help="When our laying hens reach production age"
         )
