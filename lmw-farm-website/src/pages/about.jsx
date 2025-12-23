@@ -1,3 +1,6 @@
+import lmwfam from '/src/assets/LMWFam.jpg'; 
+import sbr from '/src/assets/sbr.jpg'; 
+
 function About() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-50 to-orange-100">
@@ -69,7 +72,7 @@ function About() {
                 {/* Right Column - Family Photo */}
                 <div className="md:w-1/3 flex items-start justify-center">
                   <img 
-                    src="/src/assets/LMWFam.jpg" 
+                    src={lmwfam}
                     alt="The LMW Farm Family" 
                     className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   />
@@ -211,7 +214,7 @@ function About() {
                 {/* Right Column - Founder Photo */}
                 <div className="md:w-1/3 flex items-start justify-center">
                   <img 
-                    src="/src/assets/sbr.jpg" 
+                    src={sbr}
                     alt="LMW Farm Founder" 
                     className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   />
