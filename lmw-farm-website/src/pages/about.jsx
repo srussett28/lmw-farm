@@ -1,4 +1,4 @@
-import lmwfam from '/src/assets/LMWFam.jpg'; 
+import LMWFam from '/src/assets/LMWFam.jpg'; 
 import sbr from '/src/assets/sbr.jpg'; 
 
 function About() {
@@ -72,7 +72,7 @@ function About() {
                 {/* Right Column - Family Photo */}
                 <div className="md:w-1/3 flex items-start justify-center">
                   <img 
-                    src={lmwfam}
+                    src={LMWFam}
                     alt="The LMW Farm Family" 
                     className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   />
