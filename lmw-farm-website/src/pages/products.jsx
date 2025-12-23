@@ -148,18 +148,6 @@ function Products() {
             </div>
           ))}
         </div>
-
-        {/* Contact CTA */}
-        <div className="bg-white rounded-xl p-8 text-center shadow-lg border-2 border-blue-800">
-          <h3 className="text-3xl font-bold mb-4">Interested in ordering now?</h3>
-          <p className="text-xl mb-6">Contact us directly to place orders or ask questions!</p>
-          <a 
-            href="/contact" 
-            className="inline-block bg-teal-700 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-teal-800 transition shadow-lg"
-          >
-            Contact Us
-          </a>
-        </div>
       </div>
     </div>
   );
