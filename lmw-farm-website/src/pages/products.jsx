@@ -34,9 +34,19 @@ function Products() {
     return grouped;
   };
 
+  const deduplicateProducts = (products) => {
+    const seen = new Set();
+    return products.filter(product => {
+      const key = product.product_name.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  };
+
   const groupChicksByBreed = (chicks) => {
-    // Only show key breeds to reduce clutter
-    const keyBreeds = ['Black Copper Marans', 'Cream Legbar', 'Olive Eggers', 'Americanas'];
+    // Correct breeds: Americanas, Black Copper Marans, Cream Legbar, Barred Rocks
+    const keyBreeds = ['Black Copper Marans', 'Cream Legbar', 'Americanas', 'Barred Rock'];
     const breeds = {};
     
     chicks.forEach(chick => {
@@ -44,7 +54,7 @@ function Products() {
       const breed = breedMatch ? breedMatch[1] : chick.product_name;
       
       // Only include key breeds
-      if (keyBreeds.includes(breed)) {
+      if (keyBreeds.some(keyBreed => breed.includes(keyBreed))) {
         if (!breeds[breed]) breeds[breed] = [];
         breeds[breed].push(chick);
       }
@@ -113,7 +123,7 @@ function Products() {
                 ))
               ) : (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {products.map((product) => (
+                  {deduplicateProducts(products).map((product) => (
                     <div key={product.product_id} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition border-2 border-blue-800">
                       <h4 className="text-xl font-bold mb-2">{product.product_name}</h4>
                       <p className="text-gray-600 mb-4">{product.description}</p>
