@@ -1,6 +1,5 @@
-import React from 'react';
-import LMWFam from '/src/assets/LMWFam.jpg';
-import sbrImage from "/src/assets/sbr.jpg"; 
+import LMWFam from '../assets/LMWFam.jpg';
+import sbrImage from '../assets/sbr.jpg';
 
 
 function About() {
