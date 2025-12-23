@@ -1,4 +1,5 @@
-import LMWFam from '../assets/LMWFam.jpg';
+import { useState } from 'react';
+import LMWFam from '../assets/LMWFam.JPG';
 import sbrImage from '../assets/sbr.jpg';
 
 
