@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import lmwlogo from '/src/assets/lmw-logo.jpg';
 import eggs from '/src/assets/eggs.jpg'; 
-import chicks from "/src/assets/chicks.jpg";
+import chicks from '/src/assets/chicks.jpg';
 
 function NewsletterSignup() {
   const [email, setEmail] = useState('');
