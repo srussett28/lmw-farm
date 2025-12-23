@@ -1,4 +1,25 @@
 import { useState } from 'react';
+import australorpImg from '../assets/australorp.jpg';
+import redsImg from '../assets/reds.jpg';
+import cometImg from '../assets/comet.jpg';
+import eggersImg from '../assets/eggers.jpg';
+import starlightImg from '../assets/starlight.jpg';
+import jerseysImg from '../assets/jerseys.jpg';
+import gemsImg from '../assets/gems.jpg';
+import queensImg from '../assets/queens.jpg';
+import barredrockImg from '../assets/barredrock.jpg';
+import boImg from '../assets/BO.jpg';
+import majestyImg from '../assets/majesty.jpg';
+import bslImg from '../assets/bsl.jpg';
+import zombieImg from '../assets/zombie.jpg';
+import barnyardImg from '../assets/barnyard.jpg';
+import bluebellImg from '../assets/bluebell.jpg';
+import maransImg from '../assets/marans.jpg';
+import jimboImg from '../assets/jimbo.jpg';
+import legbarImg from '../assets/legbar.jpg';
+import hiveImg from '../assets/hive.jpg';
+import cowImg from '../assets/cow.jpg';
+
 
 function Animals() {
   const [selectedBreed, setSelectedBreed] = useState(null);
@@ -11,7 +32,7 @@ function Animals() {
         count: 12,
         eggColor: "Brown",
         temperament: "Docile",
-        image: "/src/assets/australorp.jpg",
+        image: australorpImg,
         description: "Known as one of the world's best laying breeds, Australorps are calm, friendly birds that consistently produce large brown eggs. They're excellent foragers and handle confinement well.",
         whyChosen: "We chose Australorps for their incredible laying ability and gentle nature around our daughters. They're perfect for families and produce beautiful, consistent brown eggs.",
         specialNotes: "Excellent layers, can lay 250+ eggs per year"
@@ -20,7 +41,7 @@ function Animals() {
         count: 10,
         eggColor: "Brown",
         temperament: "Hardy",
-        image: "/src/assets/reds.jpg",
+        image: redsImg,
         description: "Classic American breed known for excellent egg production and hardiness. These reliable birds are excellent foragers and consistently productive layers.",
         whyChosen: "These are the backbone of our brown egg production. Reliable, hardy, and consistently productive - exactly what a farm needs.",
         specialNotes: "Great foragers, consistent production"
@@ -29,7 +50,7 @@ function Animals() {
         count: 8,
         eggColor: "Brown",
         temperament: "Friendly",
-        image: "/src/assets/comet.jpg",
+        image: cometImg,
         description: "A hybrid breed developed for commercial egg production. Known for their exceptional laying ability and friendly disposition.",
         whyChosen: "These girls are egg-laying machines! They start laying early and produce consistently throughout the year.",
         specialNotes: "Early layers, high production"
@@ -38,7 +59,7 @@ function Animals() {
         count: 6,
         eggColor: "Olive Green",
         temperament: "Calm",
-        image: "/src/assets/eggers.jpg",
+        image: eggersImg,
         description: "A hybrid breed created by crossing dark brown egg layers with blue egg layers, resulting in beautiful olive-colored eggs. Calm, productive layers.",
         whyChosen: "The olive green eggs are incredible for our rainbow dozens. Customers are always amazed by the unique color.",
         specialNotes: "Unique olive green eggs, great for rainbow dozens"
@@ -47,7 +68,7 @@ function Animals() {
         count: 5,
         eggColor: "Green",
         temperament: "Friendly",
-        image: "/src/assets/starlight.jpg",
+        image: starlightImg,
         description: "A newer breed development that consistently lays green eggs. Friendly, productive birds that add beautiful color variety to egg collections.",
         whyChosen: "Another green egg variety that helps us create those stunning rainbow dozen collections that customers love.",
         specialNotes: "Rare green eggs, consistent layers"
@@ -56,7 +77,7 @@ function Animals() {
         count: 4,
         eggColor: "Brown",
         temperament: "Gentle",
-        image: "/src/assets/jerseys.jpg",
+        image: jerseysImg ,
         description: "America's largest chicken breed! These gentle giants are calm, friendly birds that lay large brown eggs. Despite their size, they're excellent foragers.",
         whyChosen: "The kids love these gentle giants! They're incredibly calm and their extra-large eggs are perfect for baking.",
         specialNotes: "Largest chicken breed, extra-large eggs"
@@ -65,7 +86,7 @@ function Animals() {
         count: 7,
         eggColor: "Brown",
         temperament: "Active",
-        image: "/src/assets/gems.jpg",
+        image: gemsImg,
         description: "A newer breed with beautiful blue-gray feathering. Active foragers that lay consistently and handle free-range life very well.",
         whyChosen: "Their beautiful blue-gray coloring caught our eye, and they're excellent free-range birds that fit perfectly with our farming style.",
         specialNotes: "Beautiful blue-gray feathers, excellent foragers"
@@ -74,7 +95,7 @@ function Animals() {
         count: 9,
         eggColor: "Brown",
         temperament: "Calm",
-        image: "/src/assets/queens.jpg",
+        image: queensImg,
         description: "A hybrid breed known for exceptional egg production and beautiful reddish-brown feathering. Calm, productive birds that adapt well to various conditions.",
         whyChosen: "Their cinnamon-colored feathers are gorgeous, and they're incredibly productive layers that handle our climate well.",
         specialNotes: "Beautiful cinnamon coloring, high production"
@@ -83,7 +104,7 @@ function Animals() {
         count: 8,
         eggColor: "Brown",
         temperament: "Friendly",
-        image: "/src/assets/barredrock.jpg",
+        image: barredrockImg,
         description: "Classic American breed known for their distinctive black and white striped feathers. Hardy, cold-resistant birds that are great for free-ranging.",
         whyChosen: "These girls are tough as nails and handle our North Carolina weather beautifully. The kids love their distinctive 'barred' pattern.",
         specialNotes: "Cold hardy, great for beginners"
@@ -92,7 +113,7 @@ function Animals() {
         count: 6,
         eggColor: "Brown",
         temperament: "Docile",
-        image: "/src/assets/BO.jpg",
+        image: boImg,
         description: "Known for their beautiful golden buff color and incredibly gentle nature. These fluffy birds are excellent mothers and consistent layers.",
         whyChosen: "The most gentle, cuddly chickens you'll ever meet! The girls love holding these sweet birds, and they're great with children.",
         specialNotes: "Extremely gentle, great with kids"
@@ -101,7 +122,7 @@ function Animals() {
         count: 5,
         eggColor: "Brown",
         temperament: "Calm",
-        image: "/src/assets/majesty.jpg",
+        image: majestyImg,
         description: "A newer breed with striking dark plumage and excellent laying ability. Calm birds that adapt well to free-range environments.",
         whyChosen: "Their dramatic dark feathers make them stand out in the flock, and they're reliable layers with great temperaments.",
         specialNotes: "Striking dark plumage, reliable layers"
@@ -110,7 +131,7 @@ function Animals() {
         count: 7,
         eggColor: "Brown",
         temperament: "Active",
-        image: "/src/assets/bsl.jpg",
+        image: bslImg,
         description: "A hybrid breed created by crossing specific breeds to create sex-linked chicks that can be sexed at hatching. Known for excellent egg production and hardiness.",
         whyChosen: "These girls are incredibly productive layers and the sex-linking trait made them easier to manage as chicks. They're reliable brown egg producers.",
         specialNotes: "Sex-linked breed, excellent production"
@@ -119,7 +140,7 @@ function Animals() {
         count: 4,
         eggColor: "Blue/Green",
         temperament: "Unique",
-        image: "/src/assets/zombie.jpg",
+        image: zombieImg,
         description: "Our own designer mix combining Cream Legbar genetics with Ayam Cemani. These unique birds produce colorful eggs with interesting genetic combinations.",
         whyChosen: "This is our experimental breeding project turned production layer. We're working on developing our own unique line with interesting egg colors and patterns.",
         specialNotes: "Our custom breeding project, unique genetics"
@@ -128,7 +149,7 @@ function Animals() {
         count: 12,
         eggColor: "Mixed",
         temperament: "Varied",
-        image: "/src/assets/barnyard.jpg",
+        image: barnyardImg,
         description: "Various mixed breed chickens that combine the best traits of multiple breeds. Each bird is unique with its own personality and egg characteristics.",
         whyChosen: "These girls represent the best of all worlds - hybrid vigor, unique appearances, and surprise egg colors. They're our 'wild cards.'",
         specialNotes: "Hybrid vigor, unique combinations"
@@ -137,7 +158,7 @@ function Animals() {
         count: 8,
         eggColor: "Brown",
         temperament: "Friendly",
-        image: "/src/assets/bluebell.jpg",
+        image: bluebellImg,
         description: "A Czech breed developed for backyard egg production. Known for their beautiful coloring, docile temperament, and excellent laying ability in various climates.",
         whyChosen: "These beautiful birds caught our eye with their unique appearance and reputation as consistent layers. They're friendly, hardy, and adapt well to our free-range setup.",
         specialNotes: "Beautiful coloring, excellent cold tolerance"
@@ -148,7 +169,7 @@ function Animals() {
         count: 9,
         eggColor: "Dark Brown/Chocolate",
         temperament: "Calm",
-        image: "/src/assets/marans.jpg",
+        image: maransImg,
         description: "French breed famous for laying the darkest brown eggs of any chicken breed. The eggs are so dark they're often called 'chocolate eggs.'",
         whyChosen: "The chocolate-colored eggs are absolutely stunning and add incredible visual appeal to our rainbow dozens. Customers are blown away by how dark they are.",
         specialNotes: "Darkest brown eggs in the world"
@@ -157,7 +178,7 @@ function Animals() {
         count: 12,
         eggColor: "Blue/Green",
         temperament: "Gentle",
-        image: "/src/assets/jimbo.jpg",
+        image: jimboImg,
         description: "Often called 'Easter Eggers,' these friendly birds lay eggs in various shades of blue and green. Each hen's eggs are a slightly different shade.",
         whyChosen: "The variety of blue and green shades makes every collection exciting. Perfect for our breeding program to maintain colorful egg genetics.",
         specialNotes: "Easter eggers, variety of blue/green shades"
@@ -166,7 +187,7 @@ function Animals() {
         count: 14,
         eggColor: "Brown",
         temperament: "Friendly",
-        image: "/src/assets/barredrock.jpg",
+        image: barredrockImg,
         description: "Classic American breed selected for breeding purposes. These birds carry excellent genetics for hardiness, productivity, and temperament.",
         whyChosen: "We're using these for our breeding program because of their proven genetics, hardiness, and excellent maternal instincts.",
         specialNotes: "Selected breeding stock, excellent mothers"
@@ -175,7 +196,7 @@ function Animals() {
         count: 21,
         eggColor: "Blue",
         temperament: "Active",
-        image: "/src/assets/legbar.jpg",
+        image: legbarImg,
         description: "A rare auto-sexing breed that lays beautiful blue eggs. Active foragers with a distinctive crest, they're excellent free-range birds.",
         whyChosen: "The blue eggs are stunning, and being auto-sexing makes breeding much easier. These are key to our blue egg genetics.",
         specialNotes: "Auto-sexing breed, rare blue eggs"
@@ -186,7 +207,7 @@ function Animals() {
         count: "Coming 2026",
         product: "Raw Local Honey",
         temperament: "Busy",
-        image: "/src/assets/hive.jpg",
+        image: hiveImg ,
         description: "Our honeybee colonies work tirelessly to pollinate our farm and produce delicious raw honey. Each hive contains thousands of workers supporting the farm ecosystem.",
         whyChosen: "Bees are essential for pollinating our gardens and crops. Plus, the raw honey they produce is a wonderful farm product. We're learning beekeeping to support both our farm's health and offer another local product.",
         specialNotes: "Pollinators for the farm, raw honey production"
@@ -197,7 +218,7 @@ function Animals() {
         count: "Coming 2026",
         product: "Breeding Stock",
         temperament: "Docile",
-        image: "/src/assets/cow.jpg",
+        image: cowImg,
         description: "Scottish Highlands are an ancient breed known for their long horns, shaggy coats, and gentle temperament. Hardy and low-maintenance, they thrive on pasture and are excellent mothers.",
         whyChosen: "We're adding Scottish Highlands to diversify the farm and utilize our pastureland. Their gentle nature makes them safe around our daughters, and their hardiness fits our sustainable farming approach. Plus, they're absolutely beautiful!",
         specialNotes: "Heritage breed, excellent foragers, very photogenic"
