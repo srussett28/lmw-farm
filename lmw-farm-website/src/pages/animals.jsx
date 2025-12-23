@@ -434,7 +434,7 @@ function Animals() {
                     <img 
                       src={breedData[activeTab][selectedBreed].image} 
                       alt={selectedBreed}
-                      className="w-full h-96 object-cover rounded-xl shadow-xl border-4 border-white"
+                      className="w-full h-96 object-contain bg-gray-100 rounded-xl shadow-xl border-4 border-white"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
