@@ -1,5 +1,5 @@
-import LMWFam from '/src/assets/LMWFam.jpg'; 
-import sbr from '/src/assets/sbr.jpg'; 
+import LMWFamImage from '../assets/LMWFam.jpg';
+import sbrImage from '../assets/sbr.jpg';
 
 function About() {
   return (
@@ -72,7 +72,7 @@ function About() {
                 {/* Right Column - Family Photo */}
                 <div className="md:w-1/3 flex items-start justify-center">
                   <img 
-                    src={LMWFam}
+                    src={LMWFamImage}
                     alt="The LMW Farm Family" 
                     className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   />
@@ -214,7 +214,7 @@ function About() {
                 {/* Right Column - Founder Photo */}
                 <div className="md:w-1/3 flex items-start justify-center">
                   <img 
-                    src={sbr}
+                    src={sbrImage}
                     alt="LMW Farm Founder" 
                     className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   />
