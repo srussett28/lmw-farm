@@ -45,22 +45,34 @@ function Products() {
   };
 
   const groupChicksByBreed = (chicks) => {
-    // Correct breeds: Americanas, Black Copper Marans, Cream Legbar, Barred Rocks
-    const keyBreeds = ['Black Copper Marans', 'Cream Legbar', 'Americanas', 'Barred Rock'];
-    const breeds = {};
+  const keyBreeds = ['Black Copper Marans', 'Cream Legbar', 'Americanas', 'Barred Rock'];
+  const breeds = {};
+  
+  chicks.forEach(chick => {
+    // Find which key breed this product belongs to
+    const breed = keyBreeds.find(keyBreed => 
+      chick.product_name.includes(keyBreed)
+    );
     
-    chicks.forEach(chick => {
-      const breedMatch = chick.product_name.match(/^(.*?)\s+(Chick|Pullet|Hen|Rooster)/);
-      const breed = breedMatch ? breedMatch[1] : chick.product_name;
-      
-      // Only include key breeds
-      if (keyBreeds.some(keyBreed => breed.includes(keyBreed))) {
-        if (!breeds[breed]) breeds[breed] = [];
-        breeds[breed].push(chick);
-      }
+    if (breed) {
+      if (!breeds[breed]) breeds[breed] = [];
+      breeds[breed].push(chick);
+    }
+  });
+  
+  // Remove duplicates within each breed
+  Object.keys(breeds).forEach(breed => {
+    const seen = new Set();
+    breeds[breed] = breeds[breed].filter(chick => {
+      const key = chick.product_name.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
     });
-    return breeds;
-  };
+  });
+  
+  return breeds;
+};
 
   if (loading) {
     return (
