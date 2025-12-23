@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import visionImage from '../assets/vision.jpg';
+import chickensImage from '../assets/chickens.jpg';
+import eggsImage from '../assets/eggs.jpg';
+
+
 
 function BlogNewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -93,7 +98,7 @@ function Blog() {
       author: "LMW Farm Team",
       category: "Farm Updates",
       excerpt: "Join us as we begin our journey of sustainable farming, fresh eggs, and building a legacy for our daughters...",
-      image: "/src/assets/vision.jpg",
+      image: visionImage,
       featured: true
     },
     {
@@ -103,7 +108,7 @@ function Blog() {
       author: "LMW Farm Team",
       category: "Chickens",
       excerpt: "From Australorps to Olive Eggers, learn about the carefully selected breeds that make up our diverse flock...",
-      image: "/src/assets/chickens.jpg" ,
+      image: chickensImage,
       featured: false
     },
     {
@@ -113,7 +118,7 @@ function Blog() {
       author: "LMW Farm Team",
       category: "Products",
       excerpt: "Fresh, pasture-raised, and collected three times daily. Discover what sets LMW Farm eggs apart...",
-      image: "/src/assets/eggs.jpg",
+      image: eggsImage,
       featured: false
     }
   ];
