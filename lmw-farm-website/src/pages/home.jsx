@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import lmwlogo from '/src/assets/lmw-logo.jpg'
+import eggs from '/src/assets/eggs.jpg'; 
+import chicks from "/src/assets/chicks.jpg";
 
 function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -107,7 +110,7 @@ function Home() {
         {/* Logo */}
         <div className="text-center">
           <img 
-            src="/src/assets/lmw-logo.jpg" 
+            src={lmwlogo} 
             alt="LMW Farm Logo" 
             className="w-[26rem] h-[26rem] rounded-lg shadow-2xl mx-auto"
           />
@@ -159,7 +162,7 @@ function Home() {
       {/* Fresh Farm Eggs with Photo */}
       <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-blue-800">
         <img 
-          src="/src/assets/eggs.jpg" 
+          src={eggs}  
           alt="Fresh Farm Eggs" 
           className="w-full h-80 object-cover"
         />
@@ -178,7 +181,7 @@ function Home() {
       {/* Premium Baby Chicks with Photo */}
       <div className="bg-white rounded-xl overflow-hidden shadow-lg border-2 border-blue-800">
         <img 
-          src="/src/assets/chicks.jpg" 
+          src={chicks}
           alt="Premium Baby Chicks" 
           className="w-full h-80 object-cover object-cover"
         />
