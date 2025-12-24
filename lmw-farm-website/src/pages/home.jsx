@@ -122,14 +122,6 @@ function Home() {
           <p className="text-3xl md:text-4xl font-serif italic mb-6 leading-tight">
             Fresh Farm Eggs & Premium Baby Chicks
           </p>
-          <div className="flex gap-4 justify-center md:justify-start">
-            <a href="/about" className="bg-white text-teal-800 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition shadow-lg">
-              Our Story
-            </a>
-            <a href="/contact" className="bg-teal-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-teal-700 transition shadow-lg">
-              Get in Touch
-            </a>
-          </div>
         </div>
       </div>
     </div>
